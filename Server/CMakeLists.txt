@@ -5,10 +5,18 @@ project(MasterServer VERSION 1.0
         )
 
 set(TARGET_SOURCE 
+        include/BaseServer.h
         include/ServerExport.h
         include/Server.h
         src/Server.cpp
     )	
+
+if (UNIX)
+list(APPEND TARGET_SOURCE 
+        include/UnixServer.h
+        src/UnixServer.cpp)
+else ()
+endif (UNIX)
 
 ##build shared library
 add_library(${PROJECT_NAME} SHARED  ${TARGET_SOURCE})   

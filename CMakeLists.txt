@@ -15,7 +15,7 @@ if (WIN32)
   set(CMAKE_SHARED_LIBRARY_PREFIX "")
 endif ()
 
-add_subdirectory(Network)
+add_subdirectory(Server)
 
 #test log
 enable_testing()
